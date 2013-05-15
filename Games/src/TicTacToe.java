@@ -12,8 +12,6 @@
 
 import java.util.Scanner;
 
-import javax.swing.JFrame;
-
 public class TicTacToe {
 
 	public static void TicTacToeGame(){
@@ -32,7 +30,7 @@ public class TicTacToe {
 			playAgain = input.next();
 			
 			if(!playAgain.equalsIgnoreCase("Y")){					//not play again
-				System.out.println("Thank You for Playing!");
+				System.out.println("\nThank You for Playing!\n");
 			}
 			else{
 				for(int i = 1; i < 10; i++){

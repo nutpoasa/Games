@@ -50,7 +50,7 @@ public class TicTacToeHelper {
 		System.out.println("Player 1 is 'X' and Player 2 is 'O'.\n\nPlayer 1 Starts:");
 		
 		for(int i = 0; i < 9; i++){											//loop to start play
-			System.out.println("Please Choose a Square (1 through 9):56 ");	
+			System.out.println("Please Choose a Square (1 through 9): ");	
 			
 			checkUserInput();							//method to check for valid user input
 			
@@ -98,7 +98,7 @@ public class TicTacToeHelper {
 		
 		while(!input.hasNextInt()){						//check input for int, enter if non int input
 			input.next();
-			System.out.println("Please Enter a Valid Square Choice (1 to 9)+: ");
+			System.out.println("Please Enter a Valid Square Choice (1 to 9): ");
 			input.nextLine();
 		}
 	
@@ -106,7 +106,7 @@ public class TicTacToeHelper {
 		
 		while(square <= 0 || square > 9){			//enter if out of bounds int
 			try{										//used to catch user user input runtime error	
-				System.out.println("Please Choose a Square (1 through 9)2: ");
+				System.out.println("Please Choose a Square (1 through 9): ");
 				input.nextLine();
 				square = input.nextInt();
 			}

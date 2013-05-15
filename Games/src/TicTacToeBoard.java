@@ -15,7 +15,7 @@ public class TicTacToeBoard {
 		public static int currentBoardCount = 0;
 		private int boardSquare;
 		private String boardSymbol;
-		private String title = "Tic Tac Toe Game";
+		private String title = "\nTic Tac Toe Game\n";
 		private String[] boardProgress = new String[9];
 		
 		/* constructor method for creating Board object

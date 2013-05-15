@@ -29,7 +29,7 @@ public class GamesGuessMyCard {
 			
 				generateCard();			//method to generate random card value and suit
 				
-				System.out.print("You have 4 guesses.\nAce is considered as a low value.\n" +
+				System.out.print("\nYou have 4 guesses.\nAce is considered as a low value.\n" +
 						"Please Guess Card Value (Ace through King): ");
 				userCardValue = input.next();
 				
@@ -57,19 +57,14 @@ public class GamesGuessMyCard {
 				
 				
 				//to continue playing
-				System.out.println("Would you like to play again (Y for Yes, any other key to quit.)?");
+				System.out.println("\nWould you like to play again (Y for Yes, any other key to quit.)?");
 				playAgain = input.next();
 				
 				if(!playAgain.equalsIgnoreCase("Y")){
-					System.out.println("Thank You for Playing!");
+					System.out.println("\nThank You for Playing!\n");
 				}
 			
-			}while(playAgain.equalsIgnoreCase("Y"));
-			
-			if(input != null){
-				input.close();
-			}		
-	
+			}while(playAgain.equalsIgnoreCase("Y"));	
 		}
 	
 	/*
