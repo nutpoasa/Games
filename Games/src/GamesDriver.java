@@ -7,6 +7,8 @@ public class GamesDriver {
 		int userGameChoice = 0;
 		Boolean stillPlaying = true;
 		Scanner input = new Scanner(System.in);
+		TicTacToeBoard playGame = new TicTacToeBoard();
+		
 		do{
 			System.out.println("Please Choose a Game from Games List:\n1. Guess My Card\n2. Tic Tac Toe Game\n3. Quit Games");
 			
@@ -33,7 +35,7 @@ public class GamesDriver {
 			//choose a game or exit
 			switch(userGameChoice){
 				case 1: GamesGuessMyCard.playGuessMyCard(); break;
-				case 2: TicTacToe.TicTacToeGame(); break;
+				case 2: playGame.play(); break;
 				case 3: stillPlaying = false; break;
 			}
 		}while(stillPlaying == true);

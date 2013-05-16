@@ -24,6 +24,10 @@ public class TicTacToeHelper {
 	public static JFrame frame = new JFrame();
 	private static int[] boardChoice = new int[9];
 	final static int DUP_NOT_FOUND = -1;
+	final static int TWO = 2;
+	final static int FOUR = 4;
+	final static int SIX = 6;
+	final static int EIGHT = 8;
 	
 	/*
 	 * Method: playGame()
@@ -35,10 +39,10 @@ public class TicTacToeHelper {
 	public static void playGame(){
 		
 		//local variables
-	//	Boolean duplicate = false;
 		final int GAME_OVER = 9;
+
 		String player = null;
-		TicTacToeBoard boardInfo = new TicTacToeBoard(player, square);
+		TicTacToeBoard boardInfo = new TicTacToeBoard();
 		
 		//initialize boardChoice[] array one time
 		for(int k = 0; k < 9; k++){
@@ -72,7 +76,7 @@ public class TicTacToeHelper {
 					System.out.println(winner);
 					
 					//determines which player wins
-					if(playerSymbolCount == 2 || playerSymbolCount == 4 || playerSymbolCount == 6 || playerSymbolCount == 8 ){
+					if(playerSymbolCount == TWO || playerSymbolCount == FOUR || playerSymbolCount == SIX || playerSymbolCount == EIGHT ){
 						System.out.println("Player 1 Wins!");
 					}
 					else{
@@ -169,7 +173,7 @@ public class TicTacToeHelper {
 		//local variable
 		String symbol = null;
 			
-		if(playerSymbolCount == 2 || playerSymbolCount == 4 || playerSymbolCount == 6 || playerSymbolCount == 8){
+		if(playerSymbolCount == TWO || playerSymbolCount == FOUR || playerSymbolCount == SIX || playerSymbolCount == EIGHT){
 			symbol = "O";					//sets player symbol 'O'
 		}
 		else{
@@ -179,11 +183,20 @@ public class TicTacToeHelper {
 		return symbol;
 	}
 	
+	/*
+	 * Method: searchForDuplicate()
+	 * Description: used to check for duplicate user square choice
+	 * Input: @param int[] boardChoice
+	 * 		  @param int square
+	 * Outputs: @returns index where duplicate is found
+	 * 			@returns -1 if no duplicate is found
+	 */
+	
 	public static int searchForDuplicate(int [] duplicateNumber , int key){
 		
 		for (int i = 0; i < duplicateNumber.length; i++)
 	      {
-	           if ( duplicateNumber[i] == key )
+	           if ( duplicateNumber[i] == key )				
 	                 return i;  
 	      }
 	     return DUP_NOT_FOUND;
