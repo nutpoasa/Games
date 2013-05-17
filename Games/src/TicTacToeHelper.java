@@ -39,6 +39,7 @@ public class TicTacToeHelper {
 	public static void playGame(){
 		
 		//local variables
+		Boolean playerOne = false;
 		final int GAME_OVER = 9;
 
 		String player = null;
@@ -53,7 +54,17 @@ public class TicTacToeHelper {
 		
 		System.out.println("Player 1 is 'X' and Player 2 is 'O'.\n\nPlayer 1 Starts:");
 		
-		for(int i = 0; i < 9; i++){											//loop to start play
+		for(int i = 0; i < 9; i++){							//loop to start play
+			
+			//flag used to determine winning player
+			if(playerOne == false){					
+				playerOne = true;
+			}
+			else{
+				playerOne = false;
+				
+			}
+			
 			System.out.println("Please Choose a Square (1 through 9): ");	
 			
 			checkUserInput();							//method to check for valid user input
@@ -76,7 +87,7 @@ public class TicTacToeHelper {
 					System.out.println(winner);
 					
 					//determines which player wins
-					if(playerSymbolCount == TWO || playerSymbolCount == FOUR || playerSymbolCount == SIX || playerSymbolCount == EIGHT ){
+					if(playerOne == true ){
 						System.out.println("Player 1 Wins!");
 					}
 					else{
